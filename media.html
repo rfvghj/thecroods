@@ -5,6 +5,28 @@
 	<meta charset="UTF-8">
 	<title>Media - Game Website Template</title>
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css">\
+	<script src="./js/jquery.js" charset="utf-8" type="text/javascript"></script>
+	<script src="./js/bootstrap.min.js" charset="utf-8" type="text/javascript"></script>
+	<style>
+		.tabone{
+			width: 100%;
+			min-height: 250px;
+			display: flex;
+			flex-wrap: wrap;
+    justify-content: center;
+		}
+		.image-li{
+			width: 18%;
+    background: cornsilk;
+    border-radius: 20px;
+    margin: 3px;
+		}
+		.nav a{
+			color: #ffc635 !important;
+		}
+	</style>
 </head>
 <body>
 	<div id="background">
@@ -12,7 +34,7 @@
 			<div>
 				<div>
 					<a href="index.html" class="logo"><img src="images/logo.png" alt=""></a>
-					<ul>
+					<ul style="box-sizing: content-box;webkit-box-sizing: content-box;">
 						<li>
 							<a href="index.html" id="menu1">home</a>
 						</li>
@@ -23,7 +45,7 @@
 							<a href="games.html" id="menu3">staking</a>
 						</li>
 						<li>
-							<a href="blog.html" id="menu4">whitepage</a>
+							<a href="https://jaymie-mourning.gitbook.io/thecroods-world" id="menu4" target="_blank">whitepage</a>
 						</li>
 						<li>
 							<a href="about.html" id="menu5">team</a>
@@ -39,21 +61,80 @@
 						<div style="display: flex;
 						justify-content: center;
 						flex-direction: column;
-						text-align: center;">
-							<div style="margin-top: 40px;"> <progress value="100" max="100" style="width: 70%;
+						text-align: center;
+						color: #ffc635;">
+						<div>
+							<img src="./images/stoen.png" alt="" style="width: 40%;">
+						</div>
+							<div> <progress value="100" max="100" style="width: 70%;
 								height: 20px;"></progress><br>
-								<p>12949 / 50000 Minted</p></div>
-							<div style="margin-top: 40px;">UINT PRICE: 20000 $Cheese</div>
-							<div style="margin-top: 40px;">Mint nft use $Cheese</div>
-							<div style="margin-top: 40px;"><input id="buyinput" type="text" style="    width: 220px;
+								<p>0 / 2500 Minted</p></div>
+							<div style="margin-top: 40px;display: flex;
+							justify-content: center;">
+							<div><img src="./images/-.png" alt="" style="width: 50%;cursor: pointer;"></div>
+							<input id="buyinput" type="text" style="    width: 220px;
 								height: 35px;
 								border-radius: 8px;
 								border: 1px;
-								text-align: center;" placeholder="min is 0.5BNB  max is 2BNB"></div>
-							<div style="margin-top: 40px;"><button>mint</button></div>
+								text-align: center;
+								margin-top: 5px;" placeholder="min is 1NFT  max is 10NFT">
+								<div><img src="./images/+.png" alt="" style="width:50%;cursor: pointer;"></div></div>
+							<div><img src="./images/Mint.png" alt="" style="width: 13%;cursor: pointer;"></div>
 
 						</div>
-						
+						<div>
+							<h3 style="text-align: center;color: #ffc635;">MY NFTS</h3>
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" role="tablist">
+							  <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Normal</a></li>
+							  <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Common</a></li>
+							  <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Rare</a></li>
+							  <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Super Rare</a></li>
+							  <li role="presentation"><a href="#five" aria-controls="five" role="tab" data-toggle="tab">Legendary</a></li>
+							</ul>
+						  
+							<!-- Tab panes -->
+							<div class="tab-content">
+							  <div role="tabpanel" class="tab-pane active" id="home">
+								  <div class="tabone">
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+								  </div>
+							  </div>
+							  <div role="tabpanel" class="tab-pane" id="profile">
+								  <div class="tabone">2</div>
+							  </div>
+							  <div role="tabpanel" class="tab-pane" id="messages">
+								<div class="tabone">3</div>
+							  </div>
+							  <div role="tabpanel" class="tab-pane" id="settings">
+								  <div class="tabone">4</div>
+							  </div>
+							  <div role="tabpanel" class="tab-pane" id="five">
+								<div class="tabone">5</div>
+							</div>
+							</div>
+						  
+						  </div>
 					</div>
 				</div>
 			</div>
@@ -77,4 +158,12 @@
 		</div>
 	</div>
 </body>
+
+<script>
+	$('#myTabs a[href="#profile"]').tab('show') // Select tab by name
+$('#myTabs a:first').tab('show') // Select first tab
+$('#myTabs a:last').tab('show') // Select last tab
+$('#myTabs li:eq(2) a').tab('show') 
+</script>
+
 </html>
