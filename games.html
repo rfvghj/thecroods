@@ -10,11 +10,26 @@
 			width: 100%;
 			height: 250px;
 			display: flex;
+			margin-top: 15px;
 			flex-direction: row;
+			justify-content: center;
+			color: #ffffff;
+    font-family: BankGothic Md BT;
 		}
 		.pool1{
-			width: 50%;
+			width: 40%;
+			margin: 20px;
 			height: 250px;
+			border: 2px solid #61b029;
+    border-radius: 30px;
+	display: flex;
+    flex-direction: column;
+		}
+		.pool2{
+			display: flex;
+    justify-content: space-around;
+	height: 70px;
+	line-height: 70px;
 		}
 	</style>
 </head>
@@ -48,30 +63,137 @@
 			<div>
 				<div>
 					<div class="games" style="display: flex;flex-direction: column;">
-						<!-- <div class="content">
-							<h3>best games</h3>
-							<ul>
-								<li>
-									<a href="#" class="figure"><img src="images/best-game1.jpg" alt=""></a> <span><a href="#">This is just a place holder</a></span>
-								</li>
-								<li>
-									<a href="#" class="figure"><img src="images/best-game2.jpg" alt=""></a> <span><a href="#">This is just a place holder</a></span>
-								</li>
-								<li>
-									<a href="#" class="figure"><img src="images/best-game1.jpg" alt=""></a> <span><a href="#">This is just a place holder</a></span>
-								</li>
-								<li>
-									<a href="#" class="figure"><img src="images/best-game2.jpg" alt=""></a> <span><a href="#">This is just a place holder</a></span>
-								</li>
-							</ul>
-						</div> -->
 						<div class="pool">
-							<div class="pool1">1</div>
-							<div class="pool1">2</div>
+							<div class="pool1">
+							<div class="pool2">
+								<div><img src="./images/Class1.png" alt="" style="height:100%"></div>
+								<div>NFT LEVEL1(Normal)</div>
+							</div>
+							<div class="pool2" style="height: 40px;line-height: 40px;">
+								<div>APR :</div>
+								<div><p style="display: contents;">25555% </p> <img src="./images/S.png" alt="" style="height: 50%;"></div>
+
+							</div>
+							<div class="pool2" style="height: 40px;line-height: 40px;">
+								<div>EARN:</div>
+								<div>5666 CROODS</div>
+							</div>
+							<div>
+								<div>
+									<div></div>
+								</div>
+							</div>
+							<div class="pool2">
+								<div onclick="staking()"> <img src="./images/Approve.png" alt="" style="height: 100%;cursor: pointer;"> </div>
+								<div onclick="staking()"><img src="./images/HARVEST.png" alt="" style="height: 100%;cursor: pointer;"></div>
+							</div>	
+
+							</div>
+							<div class="pool1">
+								<div class="pool2">
+									<div><img src="./images/Class2.png" alt="" style="height:100%"></div>
+									<div>NFT LEVEL2(Common)</div>
+								</div>
+								<div class="pool2" style="height: 40px;line-height: 40px;">
+									<div>APR :</div>
+									<div><p style="display: contents;">55555% </p> <img src="./images/S.png" alt="" style="height: 50%;"></div>
+	
+								</div>
+								<div class="pool2" style="height: 40px;line-height: 40px;">
+									<div>EARN:</div>
+									<div>15666 CROODS</div>
+								</div>
+								<div>
+									<div>
+										<div></div>
+									</div>
+								</div>
+								<div class="pool2">
+									<div onclick="staking()"> <img src="./images/Approve.png" alt="" style="height: 100%;cursor: pointer;"> </div>
+									<div onclick="staking()"> <img src="./images/HARVEST.png" alt="" style="height: 100%;cursor: pointer;"></div>
+								</div>	
+	
+								</div>
 						</div>
 						<div class="pool">
-							<div class="pool1">3</div>
-							<div class="pool1">4</div>
+							<div class="pool1">
+								<div class="pool2">
+									<div><img src="./images/Class3.png" alt="" style="height:100%"></div>
+									<div>NFT LEVEL3(Rare)</div>
+								</div>
+								<div class="pool2" style="height: 40px;line-height: 40px;">
+									<div>APR :</div>
+									<div><p style="display: contents;">175555% </p> <img src="./images/S.png" alt="" style="height: 50%;"></div>
+	
+								</div>
+								<div class="pool2" style="height: 40px;line-height: 40px;">
+									<div>EARN:</div>
+									<div>155666 CROODS</div>
+								</div>
+								<div>
+									<div>
+										<div></div>
+									</div>
+								</div>
+								<div class="pool2">
+									<div onclick="staking()"> <img src="./images/Approve.png" alt="" style="height: 100%;cursor: pointer;"> </div>
+									<div onclick="staking()"><img src="./images/HARVEST.png" alt="" style="height: 100%;cursor: pointer;"></div>
+								</div>	
+	
+								</div>
+								<div class="pool1">
+									<div class="pool2">
+										<div><img src="./images/Class4.png" alt="" style="height:100%"></div>
+										<div>NFT LEVEL4(Super Rare)</div>
+									</div>
+									<div class="pool2" style="height: 40px;line-height: 40px;">
+										<div>APR :</div>
+										<div><p style="display: contents;">305555% </p> <img src="./images/S.png" alt="" style="height: 50%;"></div>
+		
+									</div>
+									<div class="pool2" style="height: 40px;line-height: 40px;">
+										<div>EARN:</div>
+										<div>195666 CROODS</div>
+									</div>
+									<div>
+										<div>
+											<div></div>
+										</div>
+									</div>
+									<div class="pool2">
+										<div onclick="staking()"> <img src="./images/Approve.png" alt="" style="height: 100%;cursor: pointer;"> </div>
+										<div onclick="staking()"><img src="./images/HARVEST.png" alt="" style="height: 100%;cursor: pointer;"></div>
+									</div>	
+		
+									</div>
+						</div>
+						<div class="pool">
+							<div class="pool1">
+								<div class="pool2">
+									<div><img src="./images/Class5.png" alt="" style="height:100%"></div>
+									<div>NFT LEVEL5(Legendary)</div>
+								</div>
+								<div class="pool2" style="height: 40px;line-height: 40px;">
+									<div>APR :</div>
+									<div><p style="display: contents;">575555% </p> <img src="./images/S.png" alt="" style="height: 50%;"></div>
+	
+								</div>
+								<div class="pool2" style="height: 40px;line-height: 40px;">
+									<div>EARN:</div>
+									<div>1155666 CROODS</div>
+								</div>
+								<div>
+									<div>
+										<div></div>
+									</div>
+								</div>
+								<div class="pool2">
+									<div onclick="staking()"> <img src="./images/Approve.png" alt="" style="height: 100%;cursor: pointer;"> </div>
+									<div onclick="staking()"><img src="./images/HARVEST.png" alt="" style="height: 100%;cursor: pointer;"></div>
+								</div>	
+	
+								</div>
+								
 						</div>
 						
 						
@@ -98,4 +220,9 @@
 		</div>
 	</div>
 </body>
+<script>
+	function staking(){
+		alert("Staking hasn't started yet");
+	}
+</script>
 </html>
