@@ -19,6 +19,11 @@ body {
 	min-width: 960px;
 	padding: 0;
 }
+.wallet{
+	position: fixed;
+    top: 40px;
+    right: 80px;
+}
 #background {
 	background: url(../images/bg-page.png) no-repeat top center;
 	margin: 0;
