@@ -20,6 +20,7 @@
 		}
 		.image-li{
 			width: 18%;
+			height: 18%;
     background: cornsilk;
     border-radius: 20px;
     margin: 3px;
@@ -87,7 +88,7 @@
 						<div>
 							<h3 style="text-align: center;color: #ffc635;">MY NFTS</h3>
 							<!-- Nav tabs -->
-							<ul class="nav nav-tabs" role="tablist">
+							<ul class="nav nav-tabs" role="tablist" id="myTabs">
 							  <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Normal</a></li>
 							  <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Common</a></li>
 							  <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Rare</a></li>
@@ -98,41 +99,20 @@
 							<!-- Tab panes -->
 							<div class="tab-content">
 							  <div role="tabpanel" class="tab-pane active" id="home">
-								  <div class="tabone">
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
-									  <div class="image-li"><img src="./images/sdsd.png"  alt="Responsive image"></div>
+								  <div class="tabone" id="taba1">
 								  </div>
 							  </div>
 							  <div role="tabpanel" class="tab-pane" id="profile">
-								  <div class="tabone">2</div>
+								  <div class="tabone" id="taba2">2</div>
 							  </div>
 							  <div role="tabpanel" class="tab-pane" id="messages">
-								<div class="tabone">3</div>
+								<div class="tabone" id="taba3">3</div>
 							  </div>
 							  <div role="tabpanel" class="tab-pane" id="settings">
-								  <div class="tabone">4</div>
+								  <div class="tabone" id="taba4">4</div>
 							  </div>
 							  <div role="tabpanel" class="tab-pane" id="five">
-								<div class="tabone">5</div>
+								<div class="tabone" id="taba5">5</div>
 							</div>
 							</div>
 						  
@@ -162,10 +142,727 @@
 </body>
 
 <script>
-	$('#myTabs a[href="#profile"]').tab('show') // Select tab by name
-$('#myTabs a:first').tab('show') // Select first tab
-$('#myTabs a:last').tab('show') // Select last tab
-$('#myTabs li:eq(2) a').tab('show') 
+	   var abimedia = [
+        {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "userAddr",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "NFTConut",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "NFTAddr",
+                    "type": "address"
+                }
+            ],
+            "name": "ActivityEvent",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldAdmin",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "NewAdmin",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "NewOwner",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "oldPendingOwner",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "newPendingOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "NewPendingOwner",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "userAddr",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "eggCount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "chickCount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "address[]",
+                    "name": "chickAddrArray",
+                    "type": "address[]"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256[]",
+                    "name": "tokenIdArray",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "SmashEggsEvent",
+            "type": "event"
+        },
+        {
+            "inputs": [],
+            "name": "BOSS_CHICK_INDEX",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "LABOR_CHICK_INDEX",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "LUCKY_CHICK_INDEX",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "MINT_PRICE",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "SECTION_SIZE",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "SHRIEKING_CHICK_INDEX",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "TRUMP_CHICK_INDEX",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "acceptOwner",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "activityNFTAddr",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "activityNFTProbability",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "admin",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "aleadyBrokenEggAmount",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "chickProbability",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "adr",
+                    "type": "address"
+                }
+            ],
+            "name": "getImgUrls",
+            "outputs": [
+                {
+                    "internalType": "string[]",
+                    "name": "",
+                    "type": "string[]"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                }
+            ],
+            "name": "getLoserFailCount",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "loserChickAddrArray",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "nftAmount",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "pendingOwner",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "randomContract",
+            "outputs": [
+                {
+                    "internalType": "contract RandomInterface",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "renounceOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "sectionHasCreatedShriekingChick",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "newAdmin",
+                    "type": "address"
+                }
+            ],
+            "name": "setAdmin",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_price",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setMintPrice",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setNftAmount",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "shriekingChickSection",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "amount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "smashEggs",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "smathEggSwitch",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "receiver",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "count",
+                    "type": "uint256"
+                }
+            ],
+            "name": "transferActivityNFT",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_pendingOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "transferOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_activityNFTAddr",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_activityNFTProbability",
+                    "type": "uint256"
+                }
+            ],
+            "name": "updateActivityNFT",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "probability",
+                    "type": "uint256"
+                }
+            ],
+            "name": "updateChickProbability",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "index",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "loserChickAddr",
+                    "type": "address"
+                }
+            ],
+            "name": "updateLoserChickAddr",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_randomAddr",
+                    "type": "address"
+                }
+            ],
+            "name": "updateRandomAddr",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "updateSeed",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "random",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "section",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "isShriekingChickSection",
+                    "type": "bool"
+                }
+            ],
+            "name": "updateShriekingChickSection",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bool",
+                    "name": "_smathEggSwitch",
+                    "type": "bool"
+                }
+            ],
+            "name": "updateSmathEggSwitch",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        }
+    ];
+$("a[href='#home']").click(async function(e){
+	if (!walletWithProvider) {
+        alert("No wallet connected");
+    }
+    let contract = new ethers.Contract("0xA92875208Aa9f5a7b42351Ef00716ecA50C3C406", abimedia, walletWithProvider);      
+    var urls = await contract.getImgUrls("0x156eaC31203F333ea24aABE7AAa3b46f1E38BfCe");  
+	if(urls){
+		$("#taba1").empty();
+		for(var i =0;i<urls.length;i++){
+			$("#taba1").append('<div class="image-li"><img src='+urls[i]+' alt="Responsive image"></div>'); 
+		}
+	}
+});
+$("a[href='#profile']").click(async function(e){
+	if (!walletWithProvider) {
+        alert("No wallet connected");
+    }
+    let contract = new ethers.Contract("0xA92875208Aa9f5a7b42351Ef00716ecA50C3C406", abimedia, walletWithProvider);      
+    var urls = await contract.getImgUrls("0xFAa10aBAC17725616B5c438F9964a9be5E95d051");  
+	if(urls){
+		$("#taba2").empty();
+		for(var i =0;i<urls.length;i++){
+			$("#taba2").append('<div class="image-li"><img src='+urls[i]+' alt="Responsive image"></div>'); 
+		}
+	}
+});
+$("a[href='#messages']").click(async function(e){
+	if (!walletWithProvider) {
+        alert("No wallet connected");
+    }
+    let contract = new ethers.Contract("0xA92875208Aa9f5a7b42351Ef00716ecA50C3C406", abimedia, walletWithProvider);      
+    var urls = await contract.getImgUrls("0xcAa2F88355B671ECA2948b62b54f2410AbAAEE9D");  
+	if(urls){
+		$("#taba3").empty();
+		for(var i =0;i<urls.length;i++){
+			$("#taba3").append('<div class="image-li"><img src='+urls[i]+' alt="Responsive image"></div>'); 
+		}
+	}
+});
+$("a[href='#settings']").click(async function(e){
+	if (!walletWithProvider) {
+        alert("No wallet connected");
+    }
+    let contract = new ethers.Contract("0xA92875208Aa9f5a7b42351Ef00716ecA50C3C406", abimedia, walletWithProvider);      
+    var urls = await contract.getImgUrls("0x77a70ed32470eE4cDE0748BFC5EAfc5c634dFE3E");  
+	if(urls){
+		$("#taba4").empty();
+		for(var i =0;i<urls.length;i++){
+			$("#taba4").append('<div class="image-li"><img src='+urls[i]+' alt="Responsive image"></div>'); 
+		}
+	}
+});
+$("a[href='#five']").click(async function(e){
+	if (!walletWithProvider) {
+        alert("No wallet connected");
+    }
+    let contract = new ethers.Contract("0xA92875208Aa9f5a7b42351Ef00716ecA50C3C406", abimedia, walletWithProvider);      
+    var urls = await contract.getImgUrls("0x92a50Ca16fe25a7eA5e4d32CF84FE74e85969165");  
+	if(urls){
+		$("#taba5").empty();
+		for(var i =0;i<urls.length;i++){
+			$("#taba5").append('<div class="image-li"><img src='+urls[i]+' alt="Responsive image"></div>'); 
+		}
+	}
+});
 </script>
 
 </html>
