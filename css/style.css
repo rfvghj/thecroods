@@ -23,6 +23,12 @@ body {
 	position: fixed;
     top: 40px;
     right: 80px;
+	height: 40px;
+    width: 130px;
+    border-radius: 20px;
+    background: bisque;
+    border: none;
+	font-size: 14px;
 }
 #background {
 	background: url(../images/bg-page.png) no-repeat top center;

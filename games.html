@@ -227,6 +227,29 @@
 	</div>
 </body>
 <script>
+window.onload= async function  initAddress(){
+		var web3Provider;
+    if (window.ethereum) {
+        web3Provider = window.ethereum;
+        try {
+            await window.ethereum.enable();
+        } catch (error) {
+            console.error("User denied account access")
+        }
+    } else if (window.web3) {   
+        web3Provider = window.web3.currentProvider;
+    } else {
+        alert("！")
+        web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
+    }
+    web3 = new Web3(web3Provider);
+    let provider = new ethers.providers.Web3Provider(web3.currentProvider);
+    walletWithProvider = provider.getSigner();
+    inputPrivatekey = $('#select-address');
+     privateAddress = await walletWithProvider.getAddress();
+     currentAddress = privateAddress.slice(0,4)+"XXXXX"+privateAddress.slice(-4);
+    inputPrivatekey[0].innerHTML = privateAddress.slice(0,4)+"XXXXX"+privateAddress.slice(-4);
+	}
 	function staking(){
 		alert("Staking hasn't started yet");
 	}

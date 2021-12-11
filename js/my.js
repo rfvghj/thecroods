@@ -4,9 +4,13 @@ var etherje = "./js/ether.js";
 document.write('<scr' + 'ipt type="text/javascript" src="'+etherje+'"></scr' + 'ipt>');
 var jqueryje = "./js/jquery.js";
 document.write('<scr' + 'ipt type="text/javascript" src="'+jqueryje+'"></scr' + 'ipt>');
-var walletWithProvider;
+var walletWithProvider ;
 var privateAddress;
 var invinteAdr = window.location.hash.slice(1);
+var inputPrivatekey;
+var currentAddress ;
+
+
 async function initWallet() {
     var web3Provider;
     if (window.ethereum) {
@@ -25,8 +29,9 @@ async function initWallet() {
     web3 = new Web3(web3Provider);
     let provider = new ethers.providers.Web3Provider(web3.currentProvider);
     walletWithProvider = provider.getSigner();
-    var inputPrivatekey = $('#select-address');
+    inputPrivatekey = $('#select-address');
      privateAddress = await walletWithProvider.getAddress();
+     currentAddress = privateAddress.slice(0,4)+"XXXXX"+privateAddress.slice(-4);
     inputPrivatekey[0].innerHTML = privateAddress.slice(0,4)+"XXXXX"+privateAddress.slice(-4);
 }
 
